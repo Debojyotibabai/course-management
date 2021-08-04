@@ -1,0 +1,21 @@
+.login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 40px;
+}
+.login > h1 {
+  color: #ff4848;
+  margin-bottom: 30px;
+}
+
+.login > form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 40px;
+  box-shadow: -5px 5px 30px rgba(0, 0, 0, 0.1);
+  width: 400px;
+}

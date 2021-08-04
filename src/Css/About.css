@@ -1,0 +1,13 @@
+.about {
+  padding: 40px 50px;
+}
+.about > h1 {
+  color: #ff4848;
+  font-size: 1.7rem;
+}
+.about > p {
+  line-height: 1.5;
+  margin-top: 20px;
+  font-size: 1.05rem;
+  text-align: justify;
+}

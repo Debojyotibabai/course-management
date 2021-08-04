@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+.form__input {
+  width: 100%;
+  padding: 15px 15px;
+  border: 1px solid #cccccc;
+  margin: 10px 0;
+  font-size: 1rem;
+  outline: none !important;
+}
+.form__button {
+  padding: 12px 40px;
+  background-color: #666666;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1.05rem;
+  border: none !important;
+  outline: none !important;
+  margin-top: 10px;
+  transition: 0.3s;
+}
+.form__button:hover {
+  background-color: #ff4848;
+}
+
+.not__available {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #777777;
+}
+
+.author__course__main__section {
+  padding: 40px;
+  text-align: center;
+}
+.author__course__main__section > h1 {
+  color: #555555;
+  font-size: 1.7rem;
+}
+.author__course__main__section > button {
+  padding: 10px 20px;
+  background-color: #ff4848;
+  color: #fff;
+  border: none !important;
+  outline: none !important;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: 0.3s;
+  margin-top: 20px;
+}
+.author__course__main__section > button:hover {
+  background-color: #e72f2f;
+}
+
+.table {
+  width: 90%;
+  margin: auto;
+  margin-top: 10px;
+  max-width: 1000px;
+}
+.table > tr {
+  text-align: left;
+}
+.table > tr > th {
+  font-size: 1.1rem;
+}
+.table > tr > th,
+.table > tr > td {
+  padding: 5px;
+  text-align: center;
+}
+
+.table__delete {
+  color: #ff4848;
+  cursor: pointer;
+}
+.table__delete:hover {
+  color: #777777;
+}
+
+.course__table > tr > th {
+  width: 25%;
+}
+.author__table > tr > th {
+  width: 25%;
+}
+
+.add__author__course__main__section {
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.add__author__course__main__section > h1 {
+  color: #ff4848;
+  margin-bottom: 30px;
+}
+.add__author__course__main__section > form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 400px;
+}

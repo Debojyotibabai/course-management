@@ -1,0 +1,32 @@
+.home {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 40px;
+  width: 100%;
+}
+.home > h1 {
+  font-size: 2.3rem;
+  color: #ff4848;
+}
+.home > p {
+  margin: 20px 0 40px;
+  color: #a0a0a0;
+  font-size: 1.3rem;
+}
+.home > button {
+  background-color: #fff;
+  color: #ff4848;
+  border: 1px #ff4848 solid;
+  outline: none !important;
+  padding: 10px 20px;
+  transition: 0.3s;
+  cursor: pointer;
+  font-size: 1.1rem;
+}
+.home > button:hover {
+  background-color: #ff4848;
+  color: #fff;
+}
