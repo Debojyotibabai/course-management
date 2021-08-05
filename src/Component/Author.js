@@ -15,6 +15,7 @@ const Author = () => {
 
   const dispatch = useDispatch();
   const authorData = useSelector((state) => state.authorReducer);
+  const courseData = useSelector((state) => state.courseReducer);
 
   const isLogin = localStorage.getItem("cud");
 
@@ -30,18 +31,34 @@ const Author = () => {
     }
   };
 
-  const deleteAuthor = (index) => {
-    isLogin !== null
-      ? dispatch(authorReducerActions.deleteAuthor(index))
-      : toast.error("Signin to delete author", {
-          position: "bottom-right",
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: false,
-          pauseOnHover: false,
-          draggable: false,
-          progress: undefined,
-        });
+  const deleteAuthor = (index, name) => {
+    const isThere = courseData.some((eachData) => {
+      return name === eachData.author;
+    });
+
+    if (isLogin == null) {
+      toast.error("Signin to delete author.", {
+        position: "bottom-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: false,
+        draggable: false,
+        progress: undefined,
+      });
+    } else if (isThere) {
+      toast.error("This author is added in courses, you can't delete it.", {
+        position: "bottom-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: false,
+        draggable: false,
+        progress: undefined,
+      });
+    } else {
+      dispatch(authorReducerActions.deleteAuthor(index));
+    }
   };
 
   return (
@@ -65,7 +82,11 @@ const Author = () => {
                 <td>{eachData.name}</td>
                 <td
                   className="table__delete"
-                  onClick={deleteAuthor.bind(this, eachDataIndex)}
+                  onClick={deleteAuthor.bind(
+                    this,
+                    eachDataIndex,
+                    eachData.name
+                  )}
                 >
                   Delete
                 </td>

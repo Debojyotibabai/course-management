@@ -9,7 +9,12 @@ const courseReducer = createSlice({
     addCourse: (state, action) => {
       return [...state, action.payload.details];
     },
-    deleteCourse: (state, action) => {},
+    deleteCourse: (state, action) => {
+      const newCourseData = state.filter((eachData, eachDataIndex) => {
+        return eachDataIndex !== action.payload;
+      });
+      return newCourseData;
+    },
   },
 });
 

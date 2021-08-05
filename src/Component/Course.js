@@ -4,11 +4,18 @@ import "../App.css";
 import Swal from "sweetalert2";
 import { useHistory } from "react-router-dom";
 
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+import { courseReducerActions } from "../redux/courseReducer";
 
 const Course = () => {
   const isLogin = localStorage.getItem("cud");
   const history = useHistory();
+
+  const dispatch = useDispatch();
 
   const authorData = useSelector((state) => state.authorReducer);
   const courseData = useSelector((state) => state.courseReducer);
@@ -28,6 +35,22 @@ const Course = () => {
       history.push("/author/addauthor");
     } else {
       history.push("/course/addcourse");
+    }
+  };
+
+  const deleteCourse = (index) => {
+    if (isLogin == null) {
+      toast.error("Signin to delete course.", {
+        position: "bottom-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: false,
+        draggable: false,
+        progress: undefined,
+      });
+    } else {
+      dispatch(courseReducerActions.deleteCourse(index));
     }
   };
 
@@ -52,7 +75,12 @@ const Course = () => {
                 <td>{eachData.title}</td>
                 <td>{eachData.category}</td>
                 <td>{eachData.author}</td>
-                <td className="table__delete">Delete</td>
+                <td
+                  className="table__delete"
+                  onClick={deleteCourse.bind(this, eachDataIndex)}
+                >
+                  Delete
+                </td>
               </tr>
             );
           })}
@@ -60,6 +88,7 @@ const Course = () => {
       ) : (
         <p className="not__available">No course available.</p>
       )}
+      <ToastContainer />
     </>
   );
 };
