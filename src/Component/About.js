@@ -15,7 +15,7 @@ const About = () => {
           aperiam. Iure ab ut blanditiis. Lorem ipsum dolor sit amet consectetur
           adipisicing elit. Minima cupiditate consectetur voluptate, eos tenetur
           nam possimus eum doloremque magnam, a, adipisci dicta praesentium quod
-          pariatur aperiam. Iure ab ut blanditiis.
+          pariatur aperiam. Iure ab ut blanditiis...
         </p>
       </div>
     </>
